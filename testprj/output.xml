@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20190807 18:50:41.891" generator="Robot 3.1.2 (Python 2.7.15+ on linux2)">
+<suite source="/home/shuaib.s@ah.zymrinc.com/eclipse-workspace/testprj" id="s1" name="Testprj">
+<suite source="/home/shuaib.s@ah.zymrinc.com/eclipse-workspace/testprj/ClearTrip.robot" id="s1-s1" name="ClearTrip">
+<test id="s1-s1-t1" name="Flight Booking">
+<kw name="Navigate to ClearTrip">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>https://www.cleartrip.com/</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20190807 18:50:42.007" level="INFO">Opening browser 'chrome' to base url 'https://www.cleartrip.com/'.</msg>
+<status status="PASS" endtime="20190807 18:50:48.730" starttime="20190807 18:50:42.007"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20190807 18:50:48.843" starttime="20190807 18:50:48.732"></status>
+</kw>
+<status status="PASS" endtime="20190807 18:50:48.844" starttime="20190807 18:50:42.005"></status>
+</kw>
+<kw name="Book a round trip Flight">
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<doc>Sets radio button group ``group_name`` to ``value``.</doc>
+<arguments>
+<arg>trip_type</arg>
+<arg>RoundTrip</arg>
+</arguments>
+<msg timestamp="20190807 18:50:48.845" level="INFO">Selecting 'RoundTrip' from radio button 'trip_type'.</msg>
+<status status="PASS" endtime="20190807 18:50:48.972" starttime="20190807 18:50:48.845"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>//*[@name='origin']</arg>
+<arg>Pune, IN - Lohegaon (PNQ)</arg>
+</arguments>
+<msg timestamp="20190807 18:50:48.976" level="INFO">Typing text 'Pune, IN - Lohegaon (PNQ)' into text field '//*[@name='origin']'.</msg>
+<status status="PASS" endtime="20190807 18:50:49.225" starttime="20190807 18:50:48.974"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>//*[@name='destination']</arg>
+<arg>New Delhi, IN - Indira Gandhi Airport (DEL)</arg>
+</arguments>
+<msg timestamp="20190807 18:50:49.226" level="INFO">Typing text 'New Delhi, IN - Indira Gandhi Airport (DEL)' into text field '//*[@name='destination']'.</msg>
+<status status="PASS" endtime="20190807 18:50:49.556" starttime="20190807 18:50:49.226"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>//*[@title='Depart date']</arg>
+</arguments>
+<msg timestamp="20190807 18:50:49.557" level="INFO">Clicking element '//*[@title='Depart date']'.</msg>
+<status status="PASS" endtime="20190807 18:50:49.675" starttime="20190807 18:50:49.556"></status>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<doc>Returns list of WebElement objects matching the ``locator``.</doc>
+<arguments>
+<arg>//div[@id='ui-datepicker-div']/div[@class='monthBlock first']</arg>
+</arguments>
+<assign>
+<var>@{list}</var>
+</assign>
+<msg timestamp="20190807 18:50:49.694" level="INFO">@{list} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="380900a19c50c275f0cbc3cf744153ec", element="0be578a9-cd4f-42a9-bf7c-e40c2181a115")&gt; ]</msg>
+<status status="PASS" endtime="20190807 18:50:49.694" starttime="20190807 18:50:49.675"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${list}</arg>
+</arguments>
+<status status="PASS" endtime="20190807 18:50:49.695" starttime="20190807 18:50:49.694"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>//div[@id='ui-datepicker-div']/div[@class='monthBlock first']</arg>
+</arguments>
+<assign>
+<var>${element_count}</var>
+</assign>
+<msg timestamp="20190807 18:50:49.706" level="INFO">${element_count} = 1</msg>
+<status status="PASS" endtime="20190807 18:50:49.706" starttime="20190807 18:50:49.696"></status>
+</kw>
+<status status="PASS" endtime="20190807 18:50:49.706" starttime="20190807 18:50:48.844"></status>
+</kw>
+<status status="PASS" endtime="20190807 18:50:49.707" critical="yes" starttime="20190807 18:50:42.004"></status>
+</test>
+<kw type="teardown" name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20190807 18:50:49.770" starttime="20190807 18:50:49.708"></status>
+</kw>
+<status status="PASS" endtime="20190807 18:50:49.770" starttime="20190807 18:50:41.927"></status>
+</suite>
+<status status="PASS" endtime="20190807 18:50:49.772" starttime="20190807 18:50:41.907"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Testprj" pass="1">Testprj</stat>
+<stat fail="0" id="s1-s1" name="ClearTrip" pass="1">Testprj.ClearTrip</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
